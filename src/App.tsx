@@ -3,6 +3,18 @@ import './App.css'
 
 const WHATSAPP_LINK = "https://wa.me/5511964465975?text=Olá,%20vim%20pelo%20site%20da%20Crédito%20Finanças%20e%20gostaria%20de%20solicitar%20um%20empréstimo."
 
+// Função para rastrear cliques no WhatsApp (Meta Pixel)
+const trackWhatsAppClick = () => {
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    (window as any).fbq('track', 'Lead', {
+      content_name: 'WhatsApp Click',
+      content_category: 'Lead Generation',
+      value: 1,
+      currency: 'BRL'
+    })
+  }
+}
+
 function App() {
   const [activeTab, setActiveTab] = useState('motoristas')
   const [scrolled, setScrolled] = useState(false)
@@ -26,7 +38,7 @@ function App() {
             </div>
             <h1 className="text-xl font-bold text-white">Crédito Finanças</h1>
           </div>
-          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary" onClick={trackWhatsAppClick}>
             Falar no WhatsApp
           </a>
         </div>
@@ -48,7 +60,7 @@ function App() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-lg px-8 py-4">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-lg px-8 py-4" onClick={trackWhatsAppClick}>
               💬 Falar no WhatsApp Agora
             </a>
             <button className="btn btn-outline text-lg px-8 py-4">
@@ -171,7 +183,7 @@ function App() {
                   <p className="text-gray-300">Limite disponível</p>
                 </div>
                 <div className="border-t border-yellow-500/30 pt-6">
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary w-full block">
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary w-full block" onClick={trackWhatsAppClick}>
                     Solicitar Agora
                   </a>
                 </div>
