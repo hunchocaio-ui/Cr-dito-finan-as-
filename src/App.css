@@ -45,32 +45,33 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 48px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1.1rem;
+  padding: 18px 56px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.15rem;
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   color: #000000;
-  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
+  box-shadow: 0 12px 30px rgba(251, 191, 36, 0.4);
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .btn-primary-large:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(251, 191, 36, 0.5);
+  box-shadow: 0 16px 40px rgba(251, 191, 36, 0.5);
 }
 
-/* Hero Section */
+/* Hero Section - Grande e colorida */
 .hero-section {
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(180deg, #1f2937 0%, #111827 50%, #000000 100%);
 }
 
 /* Benefit Cards */
@@ -180,7 +181,7 @@ p {
   }
 
   .btn-primary-large {
-    padding: 14px 32px;
+    padding: 16px 40px;
     font-size: 1rem;
   }
 
@@ -189,7 +190,7 @@ p {
   }
 
   .hero-section {
-    min-height: 60vh;
+    min-height: 70vh;
     padding: 2rem 1rem;
   }
 }

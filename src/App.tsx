@@ -20,39 +20,40 @@ function App() {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Header - Simples e limpo */}
-      <header className="bg-black/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-lg">₢</span>
+      {/* Header Colorido - Grande e impactante */}
+      <header className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 border-b-4 border-yellow-500 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-3">
+              <h1 className="text-4xl font-bold">
+                <span className="text-white">Crédito</span> <span className="text-yellow-500">Finanças</span>
+              </h1>
             </div>
-            <h1 className="text-xl font-bold text-white">Crédito Finanças</h1>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary hidden sm:flex" onClick={trackWhatsAppClick}>
+              Falar no WhatsApp
+            </a>
           </div>
-          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary hidden sm:flex" onClick={trackWhatsAppClick}>
-            Falar no WhatsApp
-          </a>
         </div>
       </header>
 
-      {/* Hero Section - Grande e impactante */}
-      <section className="hero-section bg-gradient-to-b from-gray-900 to-black py-32 px-4 text-center">
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 leading-tight">
+      {/* Hero Section - Colorida e grande */}
+      <section className="hero-section bg-gradient-to-b from-gray-800 via-gray-900 to-black py-48 px-4 text-center relative">
+        <div className="max-w-4xl mx-auto fade-in-up relative z-10">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-10 leading-tight">
             Dinheiro Rápido na Sua Conta
-          </h1>
+          </h2>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
             Aprovação em <span className="text-yellow-500 font-semibold">até 24 horas</span> • <span className="text-yellow-500 font-semibold">Sem burocracia</span> • <span className="text-yellow-500 font-semibold">Atendimento humanizado</span>
           </p>
           
-          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary-large inline-block mb-8" onClick={trackWhatsAppClick}>
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary-large inline-block" onClick={trackWhatsAppClick}>
             Falar no WhatsApp Agora
           </a>
         </div>
       </section>
 
-      {/* Por Que Escolher - Cards simples */}
+      {/* Por Que Escolher */}
       <section className="py-16 px-4 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-white mb-16">Por Que Escolher a Crédito Finanças?</h2>
@@ -76,7 +77,7 @@ function App() {
         </div>
       </section>
 
-      {/* Soluções Personalizadas - Abas com cards grandes */}
+      {/* Soluções Personalizadas */}
       <section className="py-16 px-4 bg-gray-900/50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-white mb-12">Soluções Personalizadas para Você</h2>
