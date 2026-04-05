@@ -19,7 +19,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 14px 32px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
@@ -52,12 +52,12 @@
   transform: translateY(-3px);
 }
 
-/* Card Styles - Minimalista */
+/* Card Styles - Muito espaçado */
 .card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(251, 191, 36, 0.15);
   border-radius: 8px;
-  padding: 24px;
+  padding: 32px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
@@ -69,27 +69,49 @@
   box-shadow: 0 8px 20px rgba(251, 191, 36, 0.1);
 }
 
+/* Typography - Mais espaço entre linhas */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+p {
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+
 /* Grid Responsive */
 @media (max-width: 768px) {
   .grid {
-    gap: 16px !important;
+    gap: 24px !important;
   }
 
   h1 {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important;
+    margin-bottom: 2rem !important;
   }
 
   h2 {
-    font-size: 1.6rem !important;
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
   }
 
   h3 {
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
+  }
+
+  p {
+    font-size: 1.05rem !important;
+    line-height: 1.8 !important;
   }
 
   .btn {
-    padding: 10px 20px;
+    padding: 12px 28px;
     font-size: 0.95rem;
+  }
+
+  section {
+    padding: 3rem 1rem !important;
   }
 }
 
@@ -141,4 +163,26 @@ a:focus-visible {
   .whatsapp-btn {
     display: none;
   }
+}
+
+/* Ultra Clean - Sem aglomeração */
+section {
+  padding: 4rem 1rem;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+/* Espaçamento entre elementos */
+h2 + p {
+  margin-top: 1.5rem;
+}
+
+p + .btn {
+  margin-top: 2rem;
 }
