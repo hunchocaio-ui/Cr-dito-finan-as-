@@ -28,13 +28,13 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-black">
       {/* Header */}
-      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
-              <span className="text-gray-900 font-bold text-lg">₢</span>
+            <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center">
+              <span className="text-black font-bold text-lg">₢</span>
             </div>
             <h1 className="text-xl font-bold text-white">Crédito Finanças</h1>
           </div>
@@ -44,328 +44,230 @@ function App() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 text-center">
-        <div className="max-w-4xl mx-auto fade-in-up">
-          <div className="inline-block mb-6 px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full">
-            <span className="text-yellow-400 font-semibold text-sm">✨ Aprovação em Minutos</span>
-          </div>
-          
+      {/* Hero Section - Minimalista */}
+      <section className="pt-32 pb-16 px-4 text-center">
+        <div className="max-w-3xl mx-auto fade-in-up">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Dinheiro Rápido na Sua Conta
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-            Empréstimo sem burocracia para motoristas de aplicativo e comerciantes. Aprovação em minutos, dinheiro liberado na hora.
+          <p className="text-lg md:text-xl text-gray-300 mb-8">
+            Aprovação em até 24 horas • Sem burocracia • Atendimento humanizado
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-lg px-8 py-4" onClick={trackWhatsAppClick}>
-              💬 Falar no WhatsApp Agora
-            </a>
-            <button className="btn btn-outline text-lg px-8 py-4">
-              Como Funciona
-            </button>
-          </div>
-
-          {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center gap-6 text-gray-400 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">✓</span> Processo 100% Seguro
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">✓</span> Sem Taxas Escondidas
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-400">✓</span> Transparência Total
-            </div>
-          </div>
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-lg px-8 py-4 inline-block" onClick={trackWhatsAppClick}>
+            Falar no WhatsApp Agora
+          </a>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 px-4 bg-gray-800/50">
+      {/* Benefits Section - Simplificado */}
+      <section className="py-16 px-4 bg-gray-900/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-white mb-16">Por Que Escolher a Crédito Finanças?</h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-12">Por Que Escolher a Crédito Finanças?</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: '⚡', title: 'Aprovação Rápida', desc: 'Análise em minutos, não em dias. Decisão imediata.' },
-              { icon: '📋', title: 'Sem Burocracia', desc: 'Processo simplificado. Poucos documentos necessários.' },
-              { icon: '💰', title: 'Liberação Ágil', desc: 'Dinheiro na sua conta em poucas horas.' },
-              { icon: '👥', title: 'Atendimento Humanizado', desc: 'Equipe preparada para entender sua necessidade.' },
-              { icon: '✅', title: 'Processo Simples', desc: 'Tudo pelo WhatsApp. Fácil e prático.' },
-              { icon: '🔒', title: 'Totalmente Seguro', desc: 'Seus dados protegidos com criptografia.' }
+              { icon: '⚡', title: 'Aprovação Rápida', desc: 'Análise de crédito em poucas horas, não em dias' },
+              { icon: '📋', title: 'Sem Burocracia', desc: 'Processo simples e direto, sem papelada desnecessária' },
+              { icon: '💰', title: 'Liberação Ágil', desc: 'Dinheiro na sua conta em até 24 horas após aprovação' },
+              { icon: '👤', title: 'Atendimento Humanizado', desc: 'Especialistas dedicados a entender sua situação' },
+              { icon: '✅', title: 'Score Médio Aceito', desc: 'Analisamos seu perfil, não apenas números' },
+              { icon: '🔒', title: '100% Seguro', desc: 'Seus dados protegidos com as melhores práticas' }
             ].map((benefit, idx) => (
               <div key={idx} className="card group">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                <p className="text-gray-300">{benefit.desc}</p>
+                <div className="text-4xl mb-3">{benefit.icon}</div>
+                <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
+                <p className="text-gray-400 text-sm">{benefit.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Segmented Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-white mb-16">Soluções Personalizadas</h2>
+      {/* Segmented Section - Abas */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-white mb-10">Soluções Personalizadas para Você</h2>
           
-          <div className="flex justify-center gap-4 mb-12">
+          <div className="flex justify-center gap-4 mb-10">
             <button
               onClick={() => setActiveTab('motoristas')}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all ${
+              className={`px-6 py-2 rounded-lg font-semibold transition-all text-sm ${
                 activeTab === 'motoristas'
-                  ? 'bg-yellow-500 text-gray-900'
-                  : 'bg-gray-700 text-white hover:bg-gray-600'
+                  ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-black'
+                  : 'bg-gray-800 text-white hover:bg-gray-700'
               }`}
             >
-              🚗 Motoristas de App
+              🚗 Motoristas de Aplicativo
             </button>
             <button
               onClick={() => setActiveTab('comerciantes')}
-              className={`px-8 py-3 rounded-lg font-semibold transition-all ${
+              className={`px-6 py-2 rounded-lg font-semibold transition-all text-sm ${
                 activeTab === 'comerciantes'
-                  ? 'bg-yellow-500 text-gray-900'
-                  : 'bg-gray-700 text-white hover:bg-gray-600'
+                  ? 'bg-gradient-to-r from-yellow-500 to-orange-500 text-black'
+                  : 'bg-gray-800 text-white hover:bg-gray-700'
               }`}
             >
-              🏪 Comerciantes
+              🏪 Comerciantes e Donos de Negócios
             </button>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              {activeTab === 'motoristas' ? (
-                <div className="fade-in-up">
-                  <h3 className="text-3xl font-bold text-white mb-6">Para Motoristas de Aplicativo</h3>
-                  <ul className="space-y-4">
-                    {[
-                      '💵 Dinheiro para manutenção do veículo',
-                      '🚗 Capital para rodar mais e faturar mais',
-                      '⚡ Aprovação facilitada para motoristas',
-                      '📱 Processo 100% pelo WhatsApp',
-                      '🎯 Sem necessidade de comprovante de renda complexo'
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-4 text-gray-300">
-                        <span className="text-yellow-400 text-xl mt-1">✓</span>
-                        <span className="text-lg">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <div className="fade-in-up">
-                  <h3 className="text-3xl font-bold text-white mb-6">Para Comerciantes</h3>
-                  <ul className="space-y-4">
-                    {[
-                      '💼 Capital de giro para o negócio',
-                      '📈 Expansão rápida do seu empreendimento',
-                      '💰 Organização do fluxo de caixa',
-                      '📊 Análise flexível de faturamento',
-                      '🤝 Parceria de longo prazo'
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-4 text-gray-300">
-                        <span className="text-yellow-400 text-xl mt-1">✓</span>
-                        <span className="text-lg">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-            
-            <div className="bg-gradient-to-br from-yellow-500/20 to-yellow-600/10 border border-yellow-500/30 rounded-2xl p-8">
-              <div className="space-y-6">
-                <div className="text-center">
-                  <div className="text-5xl font-bold text-yellow-400 mb-2">Até R$ 50.000</div>
-                  <p className="text-gray-300">Limite disponível</p>
-                </div>
-                <div className="border-t border-yellow-500/30 pt-6">
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary w-full block" onClick={trackWhatsAppClick}>
-                    Solicitar Agora
-                  </a>
-                </div>
+          {activeTab === 'motoristas' ? (
+            <div className="fade-in-up">
+              <div className="bg-gray-900/50 rounded-lg p-8 border border-gray-800">
+                <ul className="space-y-3">
+                  {[
+                    'Dinheiro para manutenção do veículo',
+                    'Capital para rodar mais e faturar mais',
+                    'Sem exigências de comprovante de renda formal',
+                    'Análise rápida baseada em seu histórico',
+                    'Parcelas que cabem no seu bolso'
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-gray-300">
+                      <span className="text-yellow-500 font-bold mt-0.5">-</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="fade-in-up">
+              <div className="bg-gray-900/50 rounded-lg p-8 border border-gray-800">
+                <ul className="space-y-3">
+                  {[
+                    'Capital de giro para o seu negócio',
+                    'Investimento em estoque e equipamentos',
+                    'Organização do fluxo de caixa',
+                    'Análise focada no potencial do seu negócio',
+                    'Condições flexíveis e personalizadas'
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-gray-300">
+                      <span className="text-yellow-500 font-bold mt-0.5">-</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Social Proof Section */}
-      <section className="py-20 px-4 bg-gray-800/50">
+      {/* Testimonials - Simplificado */}
+      <section className="py-16 px-4 bg-gray-900/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-white mb-16">Clientes Satisfeitos</h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-10">O Que Nossos Clientes Dizem</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                name: 'Carlos M.',
-                role: 'Motorista Uber',
-                text: 'Consegui o empréstimo em menos de 2 horas! Muito rápido e fácil. Recomendo!',
-                rating: 5
+                name: 'Motorista Uber - São Paulo',
+                text: 'Precisava de dinheiro urgente para consertar meu carro e em 2 dias estava com o valor na conta. Muito rápido mesmo!'
               },
               {
-                name: 'Fernanda S.',
-                role: 'Loja de Roupas',
-                text: 'Excelente atendimento. Consegui capital para expandir meu negócio sem complicações.',
-                rating: 5
+                name: 'Fernanda S. - Dona de Loja',
+                text: 'Atendimento excelente! Explicaram tudo direitinho e não tive surpresas. Já peguei meu segundo empréstimo com eles.'
               },
               {
-                name: 'João P.',
-                role: 'Motorista 99',
-                text: 'Transparência total. Sem taxas escondidas. Muito satisfeito com o processo.',
-                rating: 5
+                name: 'Roberto L. - Motorista 99',
+                text: 'Sem burocracia mesmo! Fiz tudo pelo WhatsApp, enviei meus dados e pronto. Recomendo para todos os meus colegas.'
               }
             ].map((testimonial, idx) => (
               <div key={idx} className="card">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">★</span>
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-500">★</span>
                   ))}
                 </div>
-                <p className="text-gray-300 mb-6 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-bold text-white">{testimonial.name}</p>
-                  <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                </div>
+                <p className="text-gray-300 mb-4 text-sm">"{testimonial.text}"</p>
+                <p className="font-semibold text-white text-sm">{testimonial.name}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-white mb-16">Como Funciona</h2>
+      {/* How It Works - Simplificado */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-white mb-10">Como Funciona? É Muito Simples!</h2>
           
-          <div className="grid md:grid-cols-5 gap-4 mb-12">
+          <div className="grid md:grid-cols-5 gap-3">
             {[
-              { num: '1', title: 'Clique no Botão', desc: 'Abra o WhatsApp' },
-              { num: '2', title: 'Fale Conosco', desc: 'Converse com nosso time' },
-              { num: '3', title: 'Envie Dados', desc: 'Informações básicas' },
-              { num: '4', title: 'Receba Análise', desc: 'Decisão rápida' },
-              { num: '5', title: 'Dinheiro Liberado', desc: 'Na sua conta' }
+              { num: '1', title: 'Clique no Botão', desc: 'Abra o WhatsApp e fale conosco' },
+              { num: '2', title: 'Fale com Especialista', desc: 'Um especialista vai entender sua necessidade' },
+              { num: '3', title: 'Envie Seus Dados', desc: 'Documentos simples e rápidos' },
+              { num: '4', title: 'Análise Rápida', desc: 'Resposta em até 24 horas' },
+              { num: '5', title: 'Dinheiro Liberado', desc: 'Receba na sua conta em poucas horas' }
             ].map((step, idx) => (
               <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-gray-900">{step.num}</span>
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-black font-bold text-lg">{step.num}</span>
                 </div>
-                <h3 className="font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-gray-400 text-sm">{step.desc}</p>
-                {idx < 4 && <div className="hidden md:block absolute right-0 top-1/2 w-8 h-0.5 bg-yellow-500/30 transform -translate-y-1/2"></div>}
+                <h4 className="font-bold text-white text-sm mb-1">{step.title}</h4>
+                <p className="text-gray-400 text-xs">{step.desc}</p>
               </div>
             ))}
-          </div>
-
-          <div className="text-center">
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-lg px-8 py-4">
-              Começar Agora
-            </a>
           </div>
         </div>
       </section>
 
-      {/* Objection Breaker */}
-      <section className="py-20 px-4 bg-gray-800/50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-white mb-16">Suas Dúvidas Respondidas</h2>
+      {/* FAQ - Simplificado */}
+      <section className="py-16 px-4 bg-gray-900/50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-center text-white mb-10">Suas Dúvidas Respondidas</h2>
           
           <div className="space-y-6">
             {[
               {
-                q: '🔒 É seguro compartilhar meus dados?',
-                a: 'Sim! Utilizamos criptografia de ponta e protegemos seus dados com os mais altos padrões de segurança do mercado.'
+                q: '🔒 Meus dados estão seguros?',
+                a: 'Sim! Usamos as melhores práticas de segurança digital. Seus dados são criptografados e protegidos conforme as normas de proteção de dados.'
               },
               {
-                q: '💰 Há taxas escondidas?',
-                a: 'Não! Somos totalmente transparentes. Você saberá exatamente quanto vai pagar antes de aceitar o empréstimo.'
+                q: '💡 Tem taxas escondidas?',
+                a: 'Não! Somos 100% transparentes. Você saberá exatamente quanto vai pagar antes de assinar qualquer contrato. Sem surpresas.'
               },
               {
-                q: '⚡ Quanto tempo leva para aprovar?',
-                a: 'Em média 15 a 30 minutos. Analisamos seu caso rapidamente e informamos a decisão via WhatsApp.'
+                q: '📊 Meu score é baixo, consigo?',
+                a: 'Sim! Não analisamos apenas números. Avaliamos seu histórico, sua renda e sua capacidade de pagamento de forma humanizada.'
               },
               {
-                q: '💵 Qual é o valor mínimo e máximo?',
-                a: 'Oferecemos desde R$ 500 até R$ 50.000, dependendo do seu perfil e necessidade.'
+                q: '⏱️ Quanto tempo leva mesmo?',
+                a: 'Análise em até 24 horas e liberação do dinheiro em até 24 horas após aprovação. Na maioria dos casos, muito mais rápido!'
+              },
+              {
+                q: '📱 Preciso ir em alguma agência?',
+                a: 'Não! Tudo é 100% digital pelo WhatsApp. Você não sai de casa e resolve tudo pelo seu celular.'
               }
-            ].map((item, idx) => (
-              <div key={idx} className="card">
-                <h3 className="text-lg font-bold text-white mb-3">{item.q}</h3>
-                <p className="text-gray-300">{item.a}</p>
+            ].map((faq, idx) => (
+              <div key={idx} className="border-l-2 border-yellow-500 pl-4">
+                <h4 className="font-bold text-white mb-2">{faq.q}</h4>
+                <p className="text-gray-400 text-sm">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-yellow-500/20 to-yellow-600/10 border-t border-yellow-500/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Não Perca Essa Oportunidade!</h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Milhares de motoristas e comerciantes já confiam em nós. Seja você o próximo a transformar sua situação financeira.
+      {/* CTA Final */}
+      <section className="py-16 px-4 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-6">Não Deixe Para Depois</h2>
+          <p className="text-gray-300 mb-8">
+            Quanto mais rápido você agir, mais rápido terá o dinheiro que precisa. Fale com um especialista agora mesmo!
           </p>
-          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-lg px-10 py-5 inline-block">
-            💬 Falar no WhatsApp Agora - É Grátis!
+          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary text-lg px-8 py-4 inline-block" onClick={trackWhatsAppClick}>
+            Solicitar Meu Empréstimo Agora
           </a>
-          <p className="text-gray-400 text-sm mt-6">Resposta em minutos • Sem compromisso • 100% Seguro</p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 border-t border-gray-700 py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-900 font-bold">₢</span>
-                </div>
-                <span className="font-bold text-white">Crédito Finanças</span>
-              </div>
-              <p className="text-gray-400 text-sm">Empréstimos rápidos e seguros para você.</p>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">Produto</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-yellow-400">Como Funciona</a></li>
-                <li><a href="#" className="hover:text-yellow-400">Benefícios</a></li>
-                <li><a href="#" className="hover:text-yellow-400">Valores</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">Empresa</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-yellow-400">Sobre Nós</a></li>
-                <li><a href="#" className="hover:text-yellow-400">Contato</a></li>
-                <li><a href="#" className="hover:text-yellow-400">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">Legal</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-yellow-400">Privacidade</a></li>
-                <li><a href="#" className="hover:text-yellow-400">Termos</a></li>
-                <li><a href="#" className="hover:text-yellow-400">Segurança</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 pt-8">
-            <p className="text-gray-400 text-sm text-center">
-              © 2026 Crédito Finanças. Todos os direitos reservados. | CNPJ: XX.XXX.XXX/0001-XX
-            </p>
-          </div>
-        </div>
+      <footer className="py-8 px-4 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <p>© 2024 Crédito Finanças. Todos os direitos reservados.</p>
       </footer>
-
-      {/* Floating WhatsApp Button */}
-      <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:shadow-xl hover:scale-110 transition-all z-40">
-        💬
-      </a>
     </div>
   )
 }
