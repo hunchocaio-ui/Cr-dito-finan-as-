@@ -4,11 +4,12 @@ import './App.css'
 const WHATSAPP_LINK = "https://wa.me/5511964465975?text=Olá,%20vim%20pelo%20site%20da%20Crédito%20Finanças%20e%20gostaria%20de%20solicitar%20um%20empréstimo."
 
 // Função para rastrear cliques no WhatsApp (Meta Pixel)
+// Evento Contact - Otimizado para campanhas de conversão WhatsApp
 const trackWhatsAppClick = () => {
   if (typeof window !== 'undefined' && (window as any).fbq) {
-    (window as any).fbq('track', 'Lead', {
-      content_name: 'WhatsApp Click',
-      content_category: 'Lead Generation',
+    (window as any).fbq('track', 'Contact', {
+      content_name: 'WhatsApp Contact',
+      content_category: 'Contact',
       value: 1,
       currency: 'BRL'
     })
