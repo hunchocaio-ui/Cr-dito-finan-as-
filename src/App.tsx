@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-const WHATSAPP_LINK = "https://wa.me/5512976043116?text=Olá,%20vim%20pelo%20site%20da%20Crédito%20Finanças%20e%20gostaria%20de%20solicitar%20um%20empréstimo."
+const WHATSAPP_LINK = "https://wa.me/5511964428379?text=Olá,%20vim%20pelo%20site%20da%20Crédito%20Finanças%20e%20gostaria%20de%20solicitar%20um%20empréstimo."
 
 // Função para rastrear cliques no WhatsApp (Meta Pixel)
 // Evento Contact - Otimizado para campanhas de conversão WhatsApp
